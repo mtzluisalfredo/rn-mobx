@@ -17,7 +17,7 @@ export default {
 
   FIRST_TAB: {
     screen       : 'app.FirstTabScreen',
-    title        : 'First Tab',
+    title        : '',
     label        : 'First Tab',
     icon         : Images.TAB_1,
     selectedIcon : Images.TAB_1_selected,
