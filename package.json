@@ -7,10 +7,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "jsc-android": "^224109.1.0",
     "mobx": "^5.1.2",
     "mobx-persist": "^0.4.1",
     "mobx-react": "^5.2.8",
+    "native-base": "^2.8.0",
     "react": "16.0.0",
     "react-native": "0.53.0",
     "react-native-navigation": "latest",

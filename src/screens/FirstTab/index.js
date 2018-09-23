@@ -8,7 +8,7 @@ import NavButtons from '../../global/NavButtons';
 import NavBar from '../../global/NavBar';
 import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
-
+import { Card } from 'native-base';
 @inject('App', 'Account', 'Counter')
 @observer
 export default class FirstTab extends Component {
@@ -17,6 +17,7 @@ export default class FirstTab extends Component {
 
   constructor(props: {}) {
     super(props);
+    console.log('TCL: Card', Card);
 
     const { App, navigator } = this.props;
     App.rootNavigator = navigator;
