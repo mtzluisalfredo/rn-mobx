@@ -12,7 +12,7 @@ export default class Card extends React.Component {
     width: PropTypes.number.isRequired,
   };
 
-  static Margin = 10;
+  static Margin = 5;
 
   render() {
     const { title, subtitle, buttonText, imageUrl, width } = this.props;
@@ -20,12 +20,17 @@ export default class Card extends React.Component {
       <View style={[styles.container, { width: width - 2 * Card.Margin }]}>
         <Image
           source={{ uri: imageUrl }}
-          style={{ width: width - 2 * Card.Margin, height: width - 10 * Card.Margin }}
+          style={{
+            width: width - 2 * Card.Margin,
+            height: width - 10 * Card.Margin,
+            borderTopLeftRadius: 5,
+            borderTopRightRadius: 5,
+          }}
         />
         <View style={styles.content}>
           <View style={styles.textContainer}>
             <Text style={styles.title}>{title}</Text>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Icon name="map-pin" size={11} color="gray" />
               <Text style={styles.subtitle}>{subtitle}</Text>
             </View>
@@ -53,6 +58,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderTopWidth: 0,
     borderColor: 'lightgray',
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
   },
   textContainer: {
     flex: 1,

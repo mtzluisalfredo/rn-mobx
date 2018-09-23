@@ -30,7 +30,6 @@ export default class FirstTab extends Component {
 
   constructor(props: {}) {
     super(props);
-    console.log('TCL: Card', Card);
 
     const { App, navigator } = this.props;
     App.rootNavigator = navigator;
@@ -86,7 +85,7 @@ export default class FirstTab extends Component {
           <Text
             style={{
               marginVertical: 10,
-              marginLeft: 17,
+              marginLeft: 14.5,
               color: '#504e49',
               fontSize: 26,
               fontWeight: 'bold'
