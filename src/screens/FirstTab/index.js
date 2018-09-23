@@ -9,6 +9,7 @@ import NavBar from '../../global/NavBar';
 import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
 import { Card } from 'native-base';
+
 @inject('App', 'Account', 'Counter')
 @observer
 export default class FirstTab extends Component {
