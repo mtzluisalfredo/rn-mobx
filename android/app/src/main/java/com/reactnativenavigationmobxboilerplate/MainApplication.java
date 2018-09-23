@@ -4,6 +4,7 @@ import android.app.Application;
 import android.support.annotation.Nullable;
 
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.wix.interactable.Interactable;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -28,7 +29,8 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
       new VectorIconsPackage(),
-      new Interactable()
+      new Interactable(),
+      new LinearGradientPackage()
       );
     }
 

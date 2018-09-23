@@ -16,6 +16,7 @@ import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
 import { Card, Thumbnail } from 'native-base';
 import Swipeable from './../components/Swipeable';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 @inject('App', 'Account', 'Counter')
 @observer
@@ -142,7 +143,11 @@ export default class FirstTab extends Component {
                   source={require('./../../../img/homeone.jpg')}
                 />
                 <View style={styles.viewText}>
-                  <Text style={styles.title}>Departamento - 2 Recamaras</Text>
+                  <Text style={styles.title}>Departamento</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Icon name="map-pin" size={11} color="gray" />
+                  <Text style={styles.titleTwo}>Zapopan, Jalisco</Text>
+                  </View>
                   <Text style={styles.subtitle}>
                     110 m² | 2 recámaras | 2 baños
                 </Text>
@@ -229,10 +234,10 @@ const styles = StyleSheet.create({
   },
   viewCard: {
     width: '100%',
-    height: 80,
-    backgroundColor: '#ffffff',
+    height: 120,
+    backgroundColor: 'white',
     paddingVertical: 5,
-    paddingLeft: 20,
+    paddingLeft: 0,
     justifyContent: 'flex-start',
     alignItems: 'center',
     flexDirection: 'row',
@@ -243,10 +248,11 @@ const styles = StyleSheet.create({
     borderWidth: 0.5
   },
   imgCard: {
-    width: 50,
-    height: 50,
+    width: 100,
+    height: 100,
     borderRadius: 5,
-    marginRight: 5
+    marginRight: 5,
+    marginLeft: -25,
   },
   viewText: {
     marginHorizontal: 4,
@@ -257,12 +263,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 13
   },
+  titleTwo: {
+    color: '#5d5d6b',
+    fontWeight: 'bold',
+    fontSize: 12,
+    marginLeft: 5,
+  },
   subtitle: {
     color: '#a5a4ae',
     fontSize: 12
   },
   viewPrice: {
-    flex: 0.26,
+    flex: 0.3,
     height: 60,
     backgroundColor: '#e1f1f1',
     borderBottomLeftRadius: 5,
