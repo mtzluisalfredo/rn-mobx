@@ -103,9 +103,9 @@ export default class FirstTab extends Component {
                 paddingEnd: 5
               }}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(elem => {
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((elem, index) => {
                 return (
-                  <View style={{ alignItems: 'center' }}>
+                  <View key={index} style={{ alignItems: 'center' }}>
                     <Image
 
                       style={{
@@ -134,9 +134,9 @@ export default class FirstTab extends Component {
             </ScrollView>
           </View>
           <Swipeable sizeImg={100} cards={Cards} />
-          {/* {[1, 2, 3, 4].map(elem => {
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((elem, index) => {
             return (
-              <View style={styles.viewCard}>
+              <View key={index} style={styles.viewCard}>
                 <Image
                   style={styles.imgCard}
                   source={require('./../../../img/homeone.jpg')}
@@ -156,7 +156,7 @@ export default class FirstTab extends Component {
                 </View>
               </View>
             );
-          })} */}
+          })}
         </View>
         {/* <View style={styles.viewCard}>
           <Image
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: '#ffffff',
     paddingVertical: 5,
-    paddingLeft: 5,
+    paddingLeft: 20,
     justifyContent: 'flex-start',
     alignItems: 'center',
     flexDirection: 'row',
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   viewPrice: {
-    flex: 0.3,
+    flex: 0.26,
     height: 60,
     backgroundColor: '#e1f1f1',
     borderBottomLeftRadius: 5,
