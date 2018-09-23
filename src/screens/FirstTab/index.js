@@ -94,36 +94,6 @@ export default class FirstTab extends Component {
           >
             Opciones de renta
           </Text>
-          {/* <View style={{ flex: 3 }}>
-            <ScrollView
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={{
-                alignItems: 'center',
-                paddingStart: 10,
-                paddingEnd: 5
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((elem, index) => {
-                return (
-                  <View key={index} style={{ alignItems: 'center' }}>
-                    <Image
-
-                      style={{
-                        marginHorizontal: 5,
-                        width: 100,
-                        height: 70,
-                        borderRadius: 5,
-                      }}
-                      source={require('./../../../img/homeone.jpg')}
-                    />
-
-                    <Text style={{ fontSize: 11 }}>Luis Alfredo</Text>
-                  </View>
-                );
-              })}
-            </ScrollView>
-          </View> */}
           <SwipeableSmall sizeImg={100} cards={Cards} />
           <Swipeable sizeImg={100} cards={Cards} />
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((elem, index) => {
@@ -137,81 +107,25 @@ export default class FirstTab extends Component {
                   <Text style={styles.title}>Departamento</Text>
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Icon name="map-pin" size={11} color="gray" />
-                  <Text style={styles.titleTwo}>Zapopan, Jalisco</Text>
+                    <Text style={styles.titleTwo}>Zapopan, Jalisco</Text>
                   </View>
                   <Text style={styles.subtitle}>
                     110 m² | 2 recámaras | 2 baños
-                </Text>
+                  </Text>
                   <Text style={{ color: '#7a7981', fontSize: 11 }}>
                     Publicado hace 9 horas
-                </Text>
+                  </Text>
                 </View>
                 <View style={styles.viewPrice}>
                   <Text style={styles.price}>4,5 K</Text>
-                  <Text style={{ fontSize: 11, color: '#65b4b7' }}>mensual</Text>
+                  <Text style={{ fontSize: 11, color: '#65b4b7' }}>
+                    mensual
+                  </Text>
                 </View>
               </View>
             );
           })}
         </View>
-        {/* <View style={styles.viewCard}>
-          <Image
-            style={styles.imgCard}
-            source={require('./../../../img/homeone.jpg')}
-          />
-          <View style={styles.viewText}>
-            <Text style={styles.title}>Departamento - 2 Recamaras</Text>
-            <Text style={styles.subtitle}>110 m² | 2 recámaras | 2 baños</Text>
-            <Text style={{ color: '#7a7981', fontSize: 11 }}>
-              Publicado hace 9 horas
-            </Text>
-          </View>
-          <View style={styles.viewPrice}>
-            <Text style={styles.price}>4,5 K</Text>
-            <Text style={{ fontSize: 11, color: '#65b4b7' }}>mensual</Text>
-          </View>
-        </View> */}
-        {/* <Image
-          source={require('./../../../img/homeone.jpg')}
-        /> */}
-        {/* <CounterView
-          count={Counter.count}
-          onPlus={() => Counter.onPlus()}
-          onMinus={() => Counter.onMinus()}
-        />
-
-        <Button
-          title={`Push new screen`}
-          onPress={() => {
-            this.props.navigator.push({
-              screen: Constants.Screens.PUSHED_SCREEN.screen,
-              title: 'Pushed Screen'
-            });
-          }}
-        />
-
-        <View style={{ marginTop: 20 }}>
-          {Account.authorized ? (
-            <View>
-              <Text>{`Logged in as ${Account.current.username}`}</Text>
-              <Button
-                title={`Log out`}
-                onPress={() =>
-                  Account.logout().then(() =>
-                    Constants.Global.openLoginModalIn(this.props.navigator)
-                  )
-                }
-              />
-            </View>
-          ) : (
-              <Button
-                title={`Log in`}
-                onPress={() =>
-                  Constants.Global.openLoginModalIn(this.props.navigator)
-                }
-              />
-            )}
-        </View> */}
       </ScrollView>
     );
   }
@@ -220,7 +134,6 @@ export default class FirstTab extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
     backgroundColor: '#ffffff'
   },
   viewCard: {
@@ -243,7 +156,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 5,
     marginRight: 5,
-    marginLeft: -25,
+    marginLeft: -25
   },
   viewText: {
     marginHorizontal: 4,
@@ -258,7 +171,7 @@ const styles = StyleSheet.create({
     color: '#5d5d6b',
     fontWeight: 'bold',
     fontSize: 12,
-    marginLeft: 5,
+    marginLeft: 5
   },
   subtitle: {
     color: '#a5a4ae',

@@ -9,10 +9,10 @@ const startTabBasedApp = () => {
   Navigation.startTabBasedApp({
     tabs: [
       {
-        ...Constants.Screens.FIRST_TAB
+        ...Constants.Screens.SECOND_TAB
       },
       {
-        ...Constants.Screens.SECOND_TAB
+        ...Constants.Screens.FIRST_TAB
       }
     ],
     ...Platform.select({

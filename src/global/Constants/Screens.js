@@ -25,7 +25,7 @@ export default {
   },
   SECOND_TAB: {
     screen       : 'app.SecondTabScreen',
-    title        : 'Second Tab',
+    title        : '',
     label        : 'Second Tab',
     icon         : Images.TAB_1,
     selectedIcon : Images.TAB_1_selected,
