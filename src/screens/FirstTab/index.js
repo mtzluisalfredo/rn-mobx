@@ -1,23 +1,19 @@
 // @flow
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-} from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
-
-import NavButtons  from '../../global/NavButtons';
-import NavBar      from '../../global/NavBar';
-import Constants   from '../../global/Constants';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import NavButtons from '../../global/NavButtons';
+import NavBar from '../../global/NavBar';
+import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
 
-@inject('App', 'Account', 'Counter') @observer
+@inject('App', 'Account', 'Counter')
+@observer
 export default class FirstTab extends Component {
   static navigatorButtons = NavButtons.WithSideMenu;
-  static navigatorStyle   = NavBar.Default;
+  static navigatorStyle = NavBar.Default;
 
   constructor(props: {}) {
     super(props);
@@ -35,17 +31,16 @@ export default class FirstTab extends Component {
         animated: true
       });
     }
-  }
+  };
 
   render() {
     const { Account, Counter } = this.props;
+    const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          First Tab Counter
-        </Text>
-
+        <Text style={styles.welcome}>First Tab Counter</Text>
+        {myIcon}
         <CounterView
           count={Counter.count}
           onPlus={() => Counter.onPlus()}
@@ -62,23 +57,28 @@ export default class FirstTab extends Component {
           }}
         />
 
-      <View style={{ marginTop: 20 }}>
-          {
-            Account.authorized ?
-              <View>
-                <Text>{`Logged in as ${Account.current.username}`}</Text>
-                <Button
-                  title={`Log out`}
-                  onPress={() => Account.logout().then(() => Constants.Global.openLoginModalIn(this.props.navigator)) }
-                />
-              </View> :
+        <View style={{ marginTop: 20 }}>
+          {Account.authorized ? (
+            <View>
+              <Text>{`Logged in as ${Account.current.username}`}</Text>
+              <Button
+                title={`Log out`}
+                onPress={() =>
+                  Account.logout().then(() =>
+                    Constants.Global.openLoginModalIn(this.props.navigator)
+                  )
+                }
+              />
+            </View>
+          ) : (
               <Button
                 title={`Log in`}
-                onPress={() => Constants.Global.openLoginModalIn(this.props.navigator) }
+                onPress={() =>
+                  Constants.Global.openLoginModalIn(this.props.navigator)
+                }
               />
-          }
+            )}
         </View>
-
       </View>
     );
   }
@@ -89,11 +89,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
-  },
+    margin: 10
+  }
 });
