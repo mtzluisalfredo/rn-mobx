@@ -1,36 +1,6 @@
 // @flow
 
-import { Platform }   from 'react-native';
-import { Navigation } from 'react-native-navigation';
 import Constants      from '../Constants';
-import TabBar         from '../TabBar';
-
-const startTabBasedApp = () => {
-  Navigation.startTabBasedApp({
-    tabs: [
-      {
-        ...Constants.Screens.SECOND_TAB
-      },
-      {
-        ...Constants.Screens.FIRST_TAB
-      }
-    ],
-    ...Platform.select({
-        ios: {
-          tabsStyle: TabBar.Main,
-        },
-        android: {
-          appStyle: TabBar.Main,
-        },
-      }),
-    drawer: {
-      left: {
-        screen: Constants.Screens.DRAWER.screen
-      },
-      disableOpenGesture: false
-    },
-  });
-}
 
 const openLoginModalIn = (navigator: { showModal: Function }, withCancelButton: boolean = true,) => {
   navigator.showModal({
@@ -41,6 +11,5 @@ const openLoginModalIn = (navigator: { showModal: Function }, withCancelButton: 
 }
 
 export default {
-  startTabBasedApp,
   openLoginModalIn
 }
