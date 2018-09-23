@@ -1,6 +1,7 @@
 // @flow
 
 import Images from './Images';
+console.log('TCL: Images', Images);
 
 export default {
   LOGIN_SCREEN: {

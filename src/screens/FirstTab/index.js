@@ -16,6 +16,7 @@ import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
 import { Card, Thumbnail } from 'native-base';
 import Swipeable from './../components/Swipeable';
+import SwipeableSmall from './../components/SwipeableSmall';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 @inject('App', 'Account', 'Counter')
@@ -93,7 +94,7 @@ export default class FirstTab extends Component {
           >
             Opciones de renta
           </Text>
-          <View style={{ flex: 3 }}>
+          {/* <View style={{ flex: 3 }}>
             <ScrollView
               horizontal={true}
               showsHorizontalScrollIndicator={false}
@@ -116,23 +117,14 @@ export default class FirstTab extends Component {
                       }}
                       source={require('./../../../img/homeone.jpg')}
                     />
-                    {/* <Thumbnail
-                      style={{
-                        marginHorizontal: 5,
-                        borderColor: 'pink',
-                        borderWidth: 2,
-                        width: 70,
-                        height: 70,
-                        borderRadius: 35
-                      }}
-                      source={require('./../../../img/homeone.jpg')}
-                    /> */}
+
                     <Text style={{ fontSize: 11 }}>Luis Alfredo</Text>
                   </View>
                 );
               })}
             </ScrollView>
-          </View>
+          </View> */}
+          <SwipeableSmall sizeImg={100} cards={Cards} />
           <Swipeable sizeImg={100} cards={Cards} />
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((elem, index) => {
             return (
