@@ -14,7 +14,7 @@ import NavButtons from '../../global/NavButtons';
 import NavBar from '../../global/NavBar';
 import Constants from '../../global/Constants';
 import CounterView from '../components/Counter';
-import { Card } from 'native-base';
+import { Card, Thumbnail } from 'native-base';
 import Swipeable from './../components/Swipeable';
 
 @inject('App', 'Account', 'Counter')
@@ -24,7 +24,7 @@ export default class FirstTab extends Component {
   // static navigatorStyle = NavBar.Default;
   static navigatorStyle = {
     navBarTransparent: true,
-    topBarElevationShadowEnabled: false,
+    topBarElevationShadowEnabled: false
   };
 
   constructor(props: {}) {
@@ -81,9 +81,58 @@ export default class FirstTab extends Component {
 
     return (
       <ScrollView style={styles.container}>
-        {/* <Swipeable cards={Cards} /> */}
         <View style={{ marginTop: 50 }}>
-          <Text style={{margin: 10, color:'#504e49', fontSize: 26, fontWeight: 'bold' }}>Opciones de renta</Text>
+          <Text
+            style={{
+              marginVertical: 10,
+              marginLeft: 17,
+              color: '#504e49',
+              fontSize: 26,
+              fontWeight: 'bold'
+            }}
+          >
+            Opciones de renta
+          </Text>
+          <View style={{ flex: 3 }}>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                alignItems: 'center',
+                paddingStart: 10,
+                paddingEnd: 5
+              }}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(elem => {
+                return (
+                  <View style={{ alignItems: 'center' }}>
+                    <Image
+
+                      style={{
+                        marginHorizontal: 5,
+                        width: 100,
+                        height: 70,
+                        borderRadius: 5,
+                      }}
+                      source={require('./../../../img/homeone.jpg')}
+                    />
+                    {/* <Thumbnail
+                      style={{
+                        marginHorizontal: 5,
+                        borderColor: 'pink',
+                        borderWidth: 2,
+                        width: 70,
+                        height: 70,
+                        borderRadius: 35
+                      }}
+                      source={require('./../../../img/homeone.jpg')}
+                    /> */}
+                    <Text style={{ fontSize: 11 }}>Luis Alfredo</Text>
+                  </View>
+                );
+              })}
+            </ScrollView>
+          </View>
           <Swipeable sizeImg={100} cards={Cards} />
           {/* {[1, 2, 3, 4].map(elem => {
             return (
